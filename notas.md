@@ -12,6 +12,12 @@
     <tr>
         <th>Lenght</th>
         <th>Signed</th>
+        <th>Unsigned</th>
+    </tr>
+    <tr>
+        <td>8-bit</td>
+        <td>i8</td>
+        <td>u8</td>
     </tr>
 </table>
 
