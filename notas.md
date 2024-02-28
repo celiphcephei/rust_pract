@@ -46,6 +46,28 @@
     </tr>
 </table>
 
+## Default types
+* Integers: i32
+* Floats: f64
+
+## Range of bits
+
+**8 bits**.  
+* Unsigned: 0 / 255.  
+* Signed: -128 / 127.  
+**16 bits**.  
+* Unsigned: 0 / 65535.  
+* Signed: -32768 / 32767.  
+**32 bits**.  
+* Unsigned: 0 / 4294967295.  
+* Signed: -2147483648 / 2147483647.  
+**64 bits**.  
+* Unsigned: 0 / 18446744073709551615.  
+* Signed: -9223372036854775808 / 9223372036854775807.  
+**128 bits**.  
+* Unsigned: 0 / 340282366920938463463374607431768211455.  
+* Signed: -170141183460469231731687303715884105728 / 170141183460469231731687303715884105727.  
+
 # Omitir variables sin usar
 Puede agregarse al inicio del programa el siguiente comentario:  
 \#[allow(unused_variables)]  
