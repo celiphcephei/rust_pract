@@ -51,7 +51,7 @@
 * Floats: f64
 
 ## Range of bits
-
+* Desde 8 hasta 128 bits.  
 **8 bits**.  
 * Unsigned: 0 / 255.  
 * Signed: -128 / 127.  
@@ -67,6 +67,43 @@
 **128 bits**.  
 * Unsigned: 0 / 340282366920938463463374607431768211455.  
 * Signed: -170141183460469231731687303715884105728 / 170141183460469231731687303715884105727.  
+
+### Architecture dependent
+usize / isize  
+Cambia a 32 bits o a 64 bits dependiendo de la arquitectura.  
+En pointers usize es útil porque asegura que podemos acceder a cualquier tipo de dato sin importar el numero de bytes.  
+#### Word
+A lo que refiere con tamaño de palabra es lo siguiente:  
+El procesador no lee los bits de 1 a 1, sino que accede a cierto numero de bits de forma simultanea, esto es la palabra.  
+Tamaño de palabra de acuerdo a la arquitectura:  
+* 32 bits: 4 bytes word. (Lee 32 bits a la vez).  
+* 64 bits: 8 bytes word. (Lee 64 bits a la vez).  
+
+## Notas especiales
+No podemos asignar un valor de una variable de un tipo a una de otro tipo, resulta obvio, pero un ejemplo es el siguiente.  
+~~~ rust
+fn main() {
+    let x: i32 = 5;
+    let mut y: u32 = 5;
+
+    y = x; // No es posible hacer esto
+}
+~~~
+
+Podemos asignar valores diciendo el numero y el tipo de dato que queremos que sea poniendo algo como "**_u8**".  
+Por ejemplo, si queremos un numero **6** que sea de tipo **u8** simplemente escribirmos **8_u8**.  
+De igual manera podemos cambiar el tipo de cualquier numero con la palabra clave **as**.  
+Por ejemplo:  
+~~~ rust
+fn main() {
+    let v: u16 = 38_u8 as u16;
+}
+~~~
+En este codigo, declaramos que queremos un tipo u16 pero le asignamos un tipo u8, pero simplemente lo cambiamos al tipo esperado u16 con **as**.  
+
+
+
+
 
 # Omitir variables sin usar
 Puede agregarse al inicio del programa el siguiente comentario:  
